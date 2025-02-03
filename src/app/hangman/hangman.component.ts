@@ -47,8 +47,8 @@ export class HangmanComponent implements OnInit {
       )
       .pipe(
         tap((response) => {
-          console.log('API Response:', response); // Debugging API response
-          this.wordDisplay = response.wordDisplay; // ✅ Update displayed word
+          console.log('API Response:', response);
+          this.wordDisplay = response.wordDisplay;
           this.attemptsLeft = response.attemptsLeft;
           this.gameOver = response.isGameOver;
         })
