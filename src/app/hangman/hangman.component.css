@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.hangman-container {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.word-display h2 {
+  letter-spacing: 5px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.alphabet {
+  margin-top: 15px;
+}
+
+.alphabet button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.alphabet button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.game-status {
+  margin-top: 20px;
+}
+
+.game-status h3 {
+  font-size: 24px;
+  color: #d9534f;
+}
+
+.game-status button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
