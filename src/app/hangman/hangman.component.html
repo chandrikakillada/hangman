@@ -1,27 +1,38 @@
-<div class="hangman-container">
-  <h1>Hangman Game</h1>
+<div class="page-background">
+  <div class="game-container">
+    <h1>Hangman Game</h1>
 
-  <div class="word-display">
-    <h2>{{ wordDisplay }}</h2>
-  </div>
+    <div class="game-area">
+      <div class="word-display">
+        <h2>{{ wordDisplay }}</h2>
+      </div>
 
-  <div class="attempts">
-    <p>Attempts Left: {{ attemptsLeft }}</p>
-  </div>
+      <div class="attempts">
+        <p>Attempts Left: {{ attemptsLeft }}</p>
+      </div>
 
-  <div class="alphabet">
-    <button
-      *ngFor="let letter of alphabet"
-      [disabled]="guessedLetters.includes(letter) || gameOver"
-      (click)="makeGuess(letter)"
-    >
-      {{ letter }}
-    </button>
-  </div>
+      <div class="alphabet">
+        <button
+          *ngFor="let letter of alphabet"
+          [disabled]="guessedLetters.includes(letter) || gameOver"
+          (click)="makeGuess(letter)"
+        >
+          {{ letter }}
+        </button>
+      </div>
 
-  <div class="game-status" *ngIf="gameOver">
-    <h3 *ngIf="attemptsLeft > 0">🎉 You Win! 🎉</h3>
-    <h3 *ngIf="attemptsLeft === 0">💀 Game Over! 💀</h3>
-    <button (click)="startGame()">Play Again</button>
+      <div class="game-status" *ngIf="gameOver">
+        <div *ngIf="attemptsLeft > 0">
+          <h3>🎉 You Win! 🎉</h3>
+          <img height="200" src="/assets/success.png" alt="success" />
+        </div>
+        <div *ngIf="attemptsLeft === 0">
+          <h3>💀 Game Over Bro! 💀</h3>
+          <img height="200" src="/assets/Failed.png" alt="failed" />
+        </div>
+        <p>The word was: {{ word }}</p>
+        <button (click)="startGame()">Play Again</button>
+      </div>
+    </div>
   </div>
 </div>
